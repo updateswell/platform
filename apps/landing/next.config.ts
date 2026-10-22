@@ -11,7 +11,7 @@ const config: NextConfig = {
       // The docs used to live at upwell.run/docs.
       { source: '/docs', destination: docsUrl, permanent: true },
       { source: '/docs/:path*', destination: `${docsUrl}/:path*`, permanent: true },
-      { source: '/llms.txt', destination: `${docsUrl}/llms.txt`, permanent: true },
+      // /llms.txt is served here (app/llms.txt); the full text is the docs'.
       { source: '/llms-full.txt', destination: `${docsUrl}/llms-full.txt`, permanent: true },
     ];
   },

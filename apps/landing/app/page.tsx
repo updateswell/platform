@@ -6,7 +6,7 @@ import { DitherLogo } from '@/components/home/dither-logo';
 import { DitherBand } from '@/components/home/dither-band';
 import { Logo } from '@/components/logo';
 import { SiteHeader } from '@/components/home/site-header';
-import { docs, githubUrl, npmUrl } from '@/lib/site';
+import { appDescription, appName, docs, githubUrl, npmUrl, siteUrl } from '@/lib/site';
 
 /* ─── Building blocks ──────────────────────────────────────────────────── */
 
@@ -105,6 +105,106 @@ const worksWith = [
   'Bare RN',
 ];
 
+/** Asked the way developers ask search engines and assistants. Plain text: it's also the JSON-LD. */
+const faqs = [
+  {
+    q: 'What is Upwell?',
+    a: 'An open-source (MIT) update orchestrator for React Native and Expo. On every launch and foreground it decides whether an install needs an OTA update, a new store build, or nothing, from one remote JSON policy, and runs that update end to end.',
+    link: ['Introduction', docs()],
+  },
+  {
+    q: 'How do I force users to update a React Native or Expo app?',
+    a: "Raise minimum in the policy. On Android installs from Google Play, Play's immediate in-app update blocks the app until it's updated. Elsewhere, Upwell shows a blocking screen with the App Store sheet or a store link. You can give users a grace period first.",
+    link: ['Forced updates', docs('/guides/forced-updates')],
+  },
+  {
+    q: 'Why do some installs stop receiving OTA updates?',
+    a: "Each OTA update targets a runtime version. After a native change bumps the runtime, installs still on the old binary get no new OTA updates and no prompt, and expo-updates can't tell them apart from up-to-date installs. Upwell detects these stranded installs and recommends, then requires, a store update.",
+    link: ['Stranded installs', docs('/concepts/stranded-installs')],
+  },
+  {
+    q: 'Does Upwell replace expo-updates or EAS Update?',
+    a: "No. Keep expo-updates with EAS Update or a self-hosted server. Upwell decides when to check, download and apply OTA updates, and knows when an install can't receive them any more. Without an OTA adapter, it handles store updates only.",
+    link: ['OTA updates', docs('/guides/ota-updates')],
+  },
+  {
+    q: 'Do I need a backend?',
+    a: 'No. The policy and releases.json are static JSON files: host them on a CDN, a bucket or GitHub Pages. Upwell collects no data; send decisions to your own analytics with onDecision.',
+    link: ['Hosting the policy', docs('/policy/hosting')],
+  },
+  {
+    q: 'How is it different from react-native-in-app-updates or react-native-version-check?',
+    a: "Those each cover one piece: Play's in-app update API, or a store version lookup. Upwell has its own Play Core integration and App Store lookup, and adds OTA updates, stranded installs, a remote policy with rollout and snoozes, a UI kit and simulation, behind one decision engine.",
+    link: ['FAQ', docs('/resources/faq')],
+  },
+  {
+    q: 'Does it work in bare React Native and Expo Go?',
+    a: "Bare React Native, yes, with Expo modules installed (npx install-expo-modules). Expo Go has no native module, so real store flows don't run there, but simulate() and the dev menu do.",
+    link: ['Installation', docs('/installation')],
+  },
+];
+
+/** schema.org data for search engines and assistants; it mirrors what the page shows. */
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      url: siteUrl,
+      name: appName,
+      description: appDescription,
+      publisher: { '@id': `${siteUrl}/#organization` },
+    },
+    {
+      '@type': 'Organization',
+      '@id': `${siteUrl}/#organization`,
+      name: appName,
+      url: siteUrl,
+      logo: `${siteUrl}/brand/logo-on-white.png`,
+      sameAs: [githubUrl, npmUrl],
+    },
+    {
+      '@type': 'SoftwareApplication',
+      '@id': `${siteUrl}/#software`,
+      name: appName,
+      description: appDescription,
+      url: siteUrl,
+      image: `${siteUrl}/og.png`,
+      applicationCategory: 'DeveloperApplication',
+      applicationSubCategory: 'React Native library',
+      operatingSystem: 'Android, iOS',
+      license: 'https://opensource.org/licenses/MIT',
+      isAccessibleForFree: true,
+      offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD' },
+      softwareHelp: docs(),
+      downloadUrl: npmUrl,
+      installUrl: docs('/installation'),
+      sameAs: [githubUrl, npmUrl],
+      publisher: { '@id': `${siteUrl}/#organization` },
+      keywords:
+        'React Native, Expo, OTA updates, expo-updates, force update, in-app updates, Google Play in-app updates, App Store, stranded installs',
+    },
+    {
+      '@type': 'SoftwareSourceCode',
+      name: appName,
+      codeRepository: githubUrl,
+      programmingLanguage: ['TypeScript', 'Kotlin', 'Swift'],
+      runtimePlatform: ['React Native', 'Expo'],
+      license: 'https://opensource.org/licenses/MIT',
+      targetProduct: { '@id': `${siteUrl}/#software` },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(({ q, a }) => ({
+        '@type': 'Question',
+        name: q,
+        acceptedAnswer: { '@type': 'Answer', text: a },
+      })),
+    },
+  ],
+};
+
 const scenarios = [
   'upToDate',
   'store.recommended',
@@ -121,6 +221,10 @@ const scenarios = [
 export default function HomePage() {
   return (
     <main className="flex flex-1 flex-col overflow-x-clip">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
+      />
       <div className="relative mx-auto w-full max-w-6xl border-x">
         <SiteHeader />
 
@@ -136,8 +240,9 @@ export default function HomePage() {
               Their Own.
             </h1>
             <p className="max-w-md text-[15px] leading-relaxed text-muted-foreground">
-              One policy decides, on every launch, whether a user needs an OTA update, a new store
-              build, or nothing. Upwell drives it end to end.
+              Upwell is an update orchestrator for React Native and Expo. One policy decides, on
+              every launch, whether a user needs an OTA update, a new store build, or nothing.
+              Upwell drives it end to end.
             </p>
             <div className="flex flex-wrap gap-3">
               <PillLink href={docs('/quick-start')} solid>
@@ -398,6 +503,31 @@ export default function HomePage() {
                 }
               </pre>
             </div>
+          </div>
+        </Row>
+
+        {/* FAQ */}
+        <Row>
+          <div className="grid gap-10 p-8 md:grid-cols-[1fr_1.6fr] md:p-12">
+            <div className="flex flex-col gap-4">
+              <Label>FAQ</Label>
+              <h2 className="upwell-display text-3xl font-medium sm:text-4xl">
+                Questions teams ask first.
+              </h2>
+            </div>
+            <dl className="border-t">
+              {faqs.map(({ q, a, link: [text, href] }) => (
+                <div key={q} className="flex flex-col gap-2 border-b py-6">
+                  <dt className="font-medium">{q}</dt>
+                  <dd className="text-sm leading-relaxed text-muted-foreground">
+                    {a}{' '}
+                    <Link href={href!} className="text-foreground underline underline-offset-4">
+                      {text}
+                    </Link>
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </Row>
 

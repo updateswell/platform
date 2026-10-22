@@ -1,5 +1,6 @@
 'use client';
 
+import { sendGAEvent } from '@next/third-parties/google';
 import { CheckIcon, CopyIcon } from 'lucide-react';
 import { useState } from 'react';
 
@@ -13,6 +14,8 @@ export function CopyCommand({ command }: { command: string }) {
           setCopied(true);
           setTimeout(() => setCopied(false), 1500);
         });
+        // A key event in GA: the closest thing to an install we can see from here.
+        if (window.dataLayer) sendGAEvent('event', 'copy_install_command', { command });
       }}
       className="group inline-flex items-center gap-3 rounded-full border bg-card px-4 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
       aria-label={`Copy "${command}"`}>

@@ -16,7 +16,7 @@ export function generateStaticParams() {
   return Object.keys(SIZES).map((format) => ({ format }));
 }
 
-export const metadata = { robots: { index: false } };
+export const metadata = { robots: { index: false }, alternates: { canonical: null } };
 
 function Wordmark({ size }: { size: number }) {
   return (
