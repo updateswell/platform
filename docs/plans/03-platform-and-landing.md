@@ -112,7 +112,7 @@ Vercel: `upwell-site` (`prj_UPdFWKWgnJBd4AgmPzmT1YHoqycR`, `upwell.run`) moves t
   `--dangerously-skip-permissions` in non-interactive mode). The first production deploy from
   `platform` was a CLI deploy (`vercel deploy --prod` from the repo root); later pushes deploy
   through the Git integration.
-- The npm README check waits for the next `upwell` release (the changeset is in).
+- Checked on npm with `upwell@0.2.1`: the README banners load from `upwell.run/brand/*`.
 
 ## Definition of done
 
