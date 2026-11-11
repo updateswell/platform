@@ -7,7 +7,7 @@ export function DitherBand({ className }: { className?: string }) {
   return (
     <div className={className} aria-hidden>
       <Dither
-        palette={['#0a0a0a', '#262626', '#525252', '#a3a3a3']}
+        palette={['#151412', '#282623', '#55524d', '#a5a19a']}
         pixelSize={3}
         waveSpeed={0.03}
         waveFrequency={2.5}

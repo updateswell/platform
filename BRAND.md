@@ -1,6 +1,6 @@
 # Upwell design system
 
-Minimal and monochrome: black, white and greys, with one typeface. Color never carries meaning on
+Minimal and monochrome: toned-down black, white and warm greys, with one typeface. Color never carries meaning on
 its own. Hierarchy comes from weight, size, borders and texture (grid lines, hatching, dither).
 
 ## Logo
@@ -36,21 +36,23 @@ crisp at any size.
 
 ## Color
 
-One neutral scale. Light and dark themes mirror each other.
+Black and white, toned down: a warm off-white and a warm off-black instead of pure `#FFF` and
+`#000`, with greys that lean the same way. Still monochrome, with no accent color. Light and dark
+themes mirror each other.
 
-| Token              | Light     | Dark      | Use                                                                 |
-| ------------------ | --------- | --------- | ------------------------------------------------------------------- |
-| `background`       | `#FAFAFA` | `#0A0A0A` | Page                                                                |
-| `surface`          | `#FFFFFF` | `#111111` | Cards, code blocks, popovers                                        |
-| `foreground`       | `#0A0A0A` | `#FAFAFA` | Text, primary buttons, the logo                                     |
-| `muted-foreground` | `#737373` | `#A3A3A3` | Secondary text                                                      |
-| `border`           | `#E5E5E5` | `#262626` | Hairlines, grid lines                                               |
-| `accent`           | `#F2F2F2` | `#1A1A1A` | Hover, subtle fills                                                 |
-| `primary`          | `#0A0A0A` | `#FAFAFA` | Same as foreground: buttons are solid black (light) or white (dark) |
+| Token              | Light     | Dark      | Use                                                                         |
+| ------------------ | --------- | --------- | --------------------------------------------------------------------------- |
+| `background`       | `#F7F5F2` | `#151412` | Page                                                                        |
+| `surface`          | `#FCFBF9` | `#1B1A18` | Cards, code blocks, popovers                                                |
+| `foreground`       | `#1D1B19` | `#EFEDEA` | Text, primary buttons, the logo                                             |
+| `muted-foreground` | `#736F69` | `#A49F98` | Secondary text                                                              |
+| `border`           | `#E2DFDA` | `#302D2A` | Hairlines, grid lines                                                       |
+| `accent`           | `#EDEAE6` | `#262421` | Hover, subtle fills                                                         |
+| `primary`          | `#1D1B19` | `#EFEDEA` | Same as foreground: buttons are solid off-black (light) or off-white (dark) |
 
-Neutral scale for anything else: `50 #FAFAFA` · `100 #F5F5F5` · `200 #E5E5E5` · `300 #D4D4D4` ·
-`400 #A3A3A3` · `500 #737373` · `600 #525252` · `700 #404040` · `800 #262626` · `900 #171717` ·
-`950 #0A0A0A`.
+Neutral scale for anything else (it replaces Tailwind's `neutral-*`): `50 #FBFAF8` · `100 #F6F4F1` ·
+`200 #E7E4DF` · `300 #D7D3CD` · `400 #A5A19A` · `500 #77736C` · `600 #55524D` · `700 #423F3B` ·
+`800 #282623` · `900 #191816` · `950 #0F0E0C`.
 
 ## Type
 

@@ -1,45 +1,58 @@
 @import 'tailwindcss';
 
-/* Upwell design system: monochrome. Source of truth: BRAND.md */
+/* Upwell design system: monochrome, toned down (warm off-white and off-black). Source of truth: BRAND.md */
 @theme {
-  --color-background: #fafafa;
-  --color-foreground: #0a0a0a;
-  --color-muted: #f5f5f5;
-  --color-muted-foreground: #737373;
-  --color-popover: #ffffff;
-  --color-popover-foreground: #0a0a0a;
-  --color-card: #ffffff;
-  --color-card-foreground: #0a0a0a;
-  --color-border: #e5e5e5;
-  --color-primary: #0a0a0a;
-  --color-primary-foreground: #fafafa;
-  --color-secondary: #f5f5f5;
-  --color-secondary-foreground: #0a0a0a;
-  --color-accent: #f2f2f2;
-  --color-accent-foreground: #0a0a0a;
-  --color-ring: #a3a3a3;
+  --color-background: #f7f5f2;
+  --color-foreground: #1d1b19;
+  --color-muted: #efedea;
+  --color-muted-foreground: #736f69;
+  --color-popover: #fcfbf9;
+  --color-popover-foreground: #1d1b19;
+  --color-card: #fcfbf9;
+  --color-card-foreground: #1d1b19;
+  --color-border: #e2dfda;
+  --color-primary: #1d1b19;
+  --color-primary-foreground: #f7f5f2;
+  --color-secondary: #efedea;
+  --color-secondary-foreground: #1d1b19;
+  --color-accent: #edeae6;
+  --color-accent-foreground: #1d1b19;
+  --color-ring: #a8a49e;
+
+  /* Warm-tinted neutral scale, so hard-coded neutral-* utilities match the tokens. */
+  --color-neutral-50: #fbfaf8;
+  --color-neutral-100: #f6f4f1;
+  --color-neutral-200: #e7e4df;
+  --color-neutral-300: #d7d3cd;
+  --color-neutral-400: #a5a19a;
+  --color-neutral-500: #77736c;
+  --color-neutral-600: #55524d;
+  --color-neutral-700: #423f3b;
+  --color-neutral-800: #282623;
+  --color-neutral-900: #191816;
+  --color-neutral-950: #0f0e0c;
 
   --font-sans: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 .dark {
-  --color-background: #0a0a0a;
-  --color-foreground: #fafafa;
-  --color-muted: #141414;
-  --color-muted-foreground: #a3a3a3;
-  --color-popover: #111111;
-  --color-popover-foreground: #fafafa;
-  --color-card: #111111;
-  --color-card-foreground: #fafafa;
-  --color-border: #262626;
-  --color-primary: #fafafa;
-  --color-primary-foreground: #0a0a0a;
-  --color-secondary: #171717;
-  --color-secondary-foreground: #fafafa;
-  --color-accent: #1a1a1a;
-  --color-accent-foreground: #fafafa;
-  --color-ring: #525252;
+  --color-background: #151412;
+  --color-foreground: #efedea;
+  --color-muted: #1f1e1b;
+  --color-muted-foreground: #a49f98;
+  --color-popover: #1b1a18;
+  --color-popover-foreground: #efedea;
+  --color-card: #1b1a18;
+  --color-card-foreground: #efedea;
+  --color-border: #302d2a;
+  --color-primary: #efedea;
+  --color-primary-foreground: #151412;
+  --color-secondary: #22201e;
+  --color-secondary-foreground: #efedea;
+  --color-accent: #262421;
+  --color-accent-foreground: #efedea;
+  --color-ring: #585550;
 }
 
 @layer base {

@@ -58,9 +58,9 @@ export default async function Card({ params }: PageProps<'/card/[format]'>) {
                 letterSpacing: '-0.04em',
                 wordSpacing: '-0.28em',
               }}>
-              Updates That Rise Up
+              No User Left On
               <br />
-              On Their Own.
+              An Old Build.
             </div>
             <div className="flex items-center gap-5" style={{ fontSize: tall ? 22 : 19 }}>
               <span className="text-muted-foreground">

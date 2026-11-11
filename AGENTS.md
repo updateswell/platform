@@ -16,7 +16,7 @@ that work.
 **The contract with `upwell`:** this repo depends on it only through published npm packages
 (`@upwell/core`) and public URLs (`https://docs.upwell.run/schemas/*`), never by path. Changing
 the policy format happens in `upwell` first (core and schemas, released to npm), then the version
-is bumped here. Locally the two repos sit side by side (`~/projects/native` is `upwell`).
+is bumped here. Locally the two repos sit side by side in `~/projects/native` (`updateswell/` is `upwell`, `platform/` is this repo).
 
 ## Layout
 
@@ -67,7 +67,7 @@ when that app (or shared files) changed.
   Prettier config is in the repo.
 - Commit messages: Conventional Commits with a scope where useful (`feat(landing): …`). Small
   changes go straight to `main` and are pushed; CI must stay green.
-- Design: monochrome (black, white, greys) and Geist Mono, per [`BRAND.md`](BRAND.md). Edit the
+- Design: monochrome (toned-down black, white and warm greys) and Geist Mono, per [`BRAND.md`](BRAND.md). Edit the
   `app/card` templates and re-render instead of editing brand PNGs.
 
 ## Product rules

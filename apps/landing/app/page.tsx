@@ -232,17 +232,17 @@ export default function HomePage() {
         <section className="relative grid min-w-0 items-center gap-8 px-6 pt-16 pb-10 md:grid-cols-[1.1fr_1fr] md:px-12 md:pt-24">
           <div className="relative z-10 flex min-w-0 flex-col items-start gap-6">
             <span className="rounded-full border bg-card px-3 py-1 text-xs text-muted-foreground">
-              v0.1 · React Native · Expo
+              Open source · React Native · Expo
             </span>
             <h1 className="upwell-display text-[2.6rem] leading-[1.05] font-medium sm:text-6xl">
-              Updates That <br className="hidden md:inline" />
-              Rise Up On <br className="hidden md:inline" />
-              Their Own.
+              No User Left <br className="hidden md:inline" />
+              On An Old <br className="hidden md:inline" />
+              Build.
             </h1>
             <p className="max-w-md text-[15px] leading-relaxed text-muted-foreground">
-              Upwell is an update orchestrator for React Native and Expo. One policy decides, on
-              every launch, whether a user needs an OTA update, a new store build, or nothing.
-              Upwell drives it end to end.
+              On every launch, Upwell works out whether a user needs an OTA update, a new version
+              from the store, or nothing, and runs that update for them. It also catches the users
+              your OTA updates can no longer reach.
             </p>
             <div className="flex flex-wrap gap-3">
               <PillLink href={docs('/quick-start')} solid>
