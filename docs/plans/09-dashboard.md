@@ -1,5 +1,9 @@
 # 09 · Dashboard
 
+> **Parked (2026-11-12).** Plan B dropped the hosted backend: the policy is published to GitHub by
+> the CLI instead (see [00 · Architecture](https://github.com/updateswell/upwell/blob/main/docs/plans/00-architecture.md#product)).
+> Kept for reference in case hosting or analytics come back.
+
 **Goal:** a web UI at `app.upwell.run` (`platform/apps/dashboard`) over the same API the
 CLI uses. It adds nothing the API can't do; it makes it visible and approachable for people who
 don't live in a terminal.

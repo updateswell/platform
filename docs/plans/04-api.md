@@ -1,5 +1,9 @@
 # 04 · API: hosting on Cloudflare
 
+> **Parked (2026-11-12).** Plan B dropped the hosted backend: the policy is published to GitHub by
+> the CLI instead (see [00 · Architecture](https://github.com/updateswell/upwell/blob/main/docs/plans/00-architecture.md#product)).
+> Kept for reference in case hosting or analytics come back.
+
 **Goal:** `platform/apps/api`: Cloudflare Workers that store versioned policy and releases
 documents per project and environment, validate every write with `@upwell/core`, and serve the
 published copies from the edge. Access is by API key; there are no user accounts yet (plan 08).

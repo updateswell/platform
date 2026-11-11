@@ -1,8 +1,8 @@
 # Upwell platform
 
-The hosted product around [Upwell](https://github.com/updateswell/upwell), an update orchestrator
-for React Native and Expo. This repo serves `upwell.run` today; the API (`api.`/`cdn.upwell.run`)
-and the dashboard (`app.upwell.run`) are planned. **Plans live in
+The website around [Upwell](https://github.com/updateswell/upwell), an update orchestrator for
+React Native and Expo. This repo serves `upwell.run`. The API (`api.`/`cdn.upwell.run`) and the
+dashboard (`app.upwell.run`) plans are parked since 2026-11-12 (plan B: no hosted backend). **Plans live in
 [`docs/plans/`](docs/plans/README.md)**; read its README for the order and status before starting
 that work.
 
@@ -11,7 +11,7 @@ that work.
 | Repo                          | What                                                                                                    |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------- |
 | `updateswell/upwell`          | The library: SDK (`upwell`), `@upwell/core`, `@upwell/cli`, JSON Schemas, docs site (`docs.upwell.run`) |
-| `updateswell/platform` (this) | The hosted product: landing (`upwell.run`), API, dashboard                                              |
+| `updateswell/platform` (this) | The landing page (`upwell.run`); API and dashboard plans parked                                         |
 
 **The contract with `upwell`:** this repo depends on it only through published npm packages
 (`@upwell/core`) and public URLs (`https://docs.upwell.run/schemas/*`), never by path. Changing

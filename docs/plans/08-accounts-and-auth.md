@@ -1,5 +1,9 @@
 # 08 · Accounts and auth
 
+> **Parked (2026-11-12).** Plan B dropped the hosted backend: the policy is published to GitHub by
+> the CLI instead (see [00 · Architecture](https://github.com/updateswell/upwell/blob/main/docs/plans/00-architecture.md#product)).
+> Kept for reference in case hosting or analytics come back.
+
 **Goal:** people can sign up, create organizations and projects, invite teammates and manage
 keys, without the owner hand-creating projects with the bootstrap token. This is what turns the
 private beta into a public product, and the dashboard (plan 09) depends on it.

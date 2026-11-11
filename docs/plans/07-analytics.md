@@ -1,5 +1,9 @@
 # 07 · Analytics
 
+> **Parked (2026-11-12).** Plan B dropped the hosted backend: the policy is published to GitHub by
+> the CLI instead (see [00 · Architecture](https://github.com/updateswell/upwell/blob/main/docs/plans/00-architecture.md#product)).
+> Kept for reference in case hosting or analytics come back.
+
 **Goal:** the platform answers the questions an app team actually has about updates, from events
 the SDK sends (plan 06). Ingest and stats live in `platform/apps/api`; the event types in
 `@upwell/core`; the reporter in `upwell`; `upwell stats` in `@upwell/cli`:
